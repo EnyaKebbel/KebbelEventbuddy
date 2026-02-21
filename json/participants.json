@@ -1,0 +1,38 @@
+[
+  {
+    "id": "p1",
+    "name": "Max Mustermann",
+    "email": "max.mustermann@example.com",
+    "avatarUrl": "images/avatars/max.png"
+  },
+  {
+    "id": "p2",
+    "name": "Lea Beispiel",
+    "email": "lea.beispiel@example.com",
+    "avatarUrl": "images/avatars/lea.png"
+  },
+  {
+    "id": "p3",
+    "name": "Sven Demo",
+    "email": "sven.demo@example.com",
+    "avatarUrl": "images/avatars/sven.png"
+  },
+  {
+    "id": "p4",
+    "name": "Anna Schneider",
+    "email": "anna.schneider@example.com",
+    "avatarUrl": "images/avatars/anna.png"
+  },
+  {
+    "id": "p5",
+    "name": "Tobias Weber",
+    "email": "tobias.weber@example.com",
+    "avatarUrl": "images/avatars/tobias.png"
+  },
+  {
+    "id": "p6",
+    "name": "Julia Hoffmann",
+    "email": "julia.hoffmann@example.com",
+    "avatarUrl": "images/avatars/julia.png"
+  }
+]

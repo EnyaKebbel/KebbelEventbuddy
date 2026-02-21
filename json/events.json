@@ -1,0 +1,32 @@
+[
+  {
+    "id": "e1",
+    "title": "Vereinsabend März",
+    "dateTime": "2026-03-14T19:30:00",
+    "location": "Vereinshaus",
+    "description": "Monatliches Treffen des Vereins mit Planung der kommenden Aktivitäten.",
+    "status": "geplant",
+    "tagIds": ["t2"],
+    "participantIds": ["p1", "p2", "p4"]
+  },
+  {
+    "id": "e2",
+    "title": "Workshop Fotografie",
+    "dateTime": "2026-04-05T10:00:00",
+    "location": "Studio Nord",
+    "description": "Praxisworkshop zur Einführung in kreative Fotografie-Techniken.",
+    "status": "geplant",
+    "tagIds": ["t1", "t3"],
+    "participantIds": ["p2", "p3", "p6", "p8"]
+  },
+  {
+    "id": "e3",
+    "title": "Sommerfest Organisation",
+    "dateTime": "2026-05-20T18:00:00",
+    "location": "Gemeindezentrum",
+    "description": "Planungstreffen für das diesjährige Sommerfest.",
+    "status": "abgeschlossen",
+    "tagIds": ["t2"],
+    "participantIds": ["p1", "p5", "p7"]
+  }
+]
