@@ -24,7 +24,10 @@ class TagManager extends HTMLElement {
               <p class="event-card__title">${this.#escape(t.name)}</p>
             </div>
             <div class="event-card__actions">
-             <button type="button" class="btn btn--danger btn-delete" data-used="${used}">
+              <button type="button" class="btn btn-edit">
+                Bearbeiten
+              </button>
+              <button type="button" class="btn btn--danger btn-delete" data-used="${used}">
                 Löschen
               </button>
             </div>
@@ -77,12 +80,33 @@ class TagManager extends HTMLElement {
 
         // Tag löschen
         this.shadowRoot.addEventListener("click", (ev) => {
+            const editBtn = ev.target.closest(".btn-edit");
+            if (editBtn) {
+                const card = editBtn.closest("[data-tag-id]");
+                const tagId = card?.dataset?.tagId;
+                if (!tagId) return;
+
+                const oldTag = model.getTagById(tagId);
+                const nextName = prompt("Neuer Tag-Name:", oldTag?.name ?? "");
+                if (nextName === null) return;
+
+                this.dispatchEvent(new CustomEvent("update-tag", {
+                    detail: { id: tagId, name: nextName.trim() },
+                    bubbles: true,
+                    composed: true,
+                }));
+                return;
+            }
+
             const btn = ev.target.closest(".btn-delete");
             if (!btn) return;
 
             const card = btn.closest("[data-tag-id]");
             const tagId = card?.dataset?.tagId;
             if (!tagId) return;
+
+            const shouldDelete = confirm("Tag wirklich löschen?");
+            if (!shouldDelete) return;
 
             this.dispatchEvent(new CustomEvent("delete-tag", {
                     detail: tagId,

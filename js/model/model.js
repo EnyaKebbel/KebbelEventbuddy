@@ -123,6 +123,21 @@ class EventBuddyModel extends EventTarget {
         this.dispatchEvent(new CustomEvent("tagsChanged"));
     }
 
+    updateTag(tagId, newName) {
+        const id = String(tagId);
+        const currentTag = this.#tags.get(id);
+        if (!currentTag) return false;
+
+        const updatedTag = new Tag({
+            id,
+            name: String(newName ?? "").trim(),
+        });
+
+        this.#tags.set(id, updatedTag);
+        this.dispatchEvent(new CustomEvent("tagsChanged"));
+        return true;
+    }
+
     deleteTag(tagId) {
         const id = String(tagId);
 
