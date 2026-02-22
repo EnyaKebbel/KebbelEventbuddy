@@ -1,12 +1,12 @@
 :root {
-  --bg-color: #f5f7fb;
+  --bg-color: #F3EDE3;
   --surface-color: #ffffff;
   --surface-soft: #f8fafc;
-  --font-color: #1f2937;
+  --font-color: #2B1407;
   --font-muted: #64748b;
   --line-color: #d8dee8;
-  --primary-color: #2563eb;
-  --primary-dark: #1d4ed8;
+  --primary-color: #5A2E12;
+  --primary-dark: #2B1407;
   --danger-color: #dc2626;
   --danger-soft: #fee2e2;
   --radius-sm: 8px;
@@ -117,7 +117,7 @@ textarea {
   color: var(--danger-color);
 }
 .btn--ghost {
-  background: transparent;
+  background: #ffffff;
 }
 .btn--block {
   width: 100%;
@@ -208,7 +208,7 @@ textarea {
   margin-top: 0.4rem;
 }
 .event-card__tags li {
-  background: #eef2ff;
+  background: #F3EDE3;
   color: #334155;
   border: 1px solid #dbe3ff;
   border-radius: 999px;
@@ -218,6 +218,61 @@ textarea {
 .event-card__actions {
   display: flex;
   justify-content: flex-end;
+}
+
+.participants {
+  border-top: 1px solid #e8edf3;
+  margin-top: 0.95rem;
+  padding-top: 0.95rem;
+}
+.participants h3 {
+  margin-bottom: 0.6rem;
+  font-size: 1rem;
+}
+.participants__list {
+  display: grid;
+  gap: 0.55rem;
+}
+.participants__item {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  border: 1px solid var(--line-color);
+  border-radius: var(--radius-sm);
+  background: #fff;
+  padding: 0.5rem 0.7rem;
+}
+.participants__avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #dbe3ee;
+  background: var(--surface-soft);
+  flex: 0 0 auto;
+}
+.participants__info {
+  min-width: 0;
+  display: grid;
+  gap: 0.1rem;
+}
+.participants__name {
+  font-weight: 600;
+  color: var(--font-color);
+  line-height: 1.25;
+}
+.participants__email {
+  color: var(--font-muted);
+  font-size: 0.86rem;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+.participants__empty {
+  border: 1px dashed var(--line-color);
+  border-radius: var(--radius-sm);
+  padding: 0.6rem;
+  color: var(--font-muted);
+  background: var(--surface-soft);
 }
 
 .event-form .participants {
@@ -336,22 +391,22 @@ textarea {
 .topbar__brand {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
+  gap: 1rem;
 }
 .topbar__logo {
-  width: 48px;
-  height: 48px;
+  width: 60px;
+  height: 60px;
   border-radius: var(--radius-md);
   border: 1px solid var(--line-color);
   background: var(--surface-soft);
   overflow: hidden;
-  flex: 0 0 48px;
+  flex: 0 0 60px;
   display: grid;
   place-items: center;
 }
 .topbar__title {
   font-size: clamp(1.2rem, 1.5vw, 1.45rem);
-  font-weight: 700;
+  font-weight: 800;
 }
 .topbar__actions {
   display: flex;
@@ -395,6 +450,37 @@ textarea {
 }
 .panel__header {
   margin-bottom: 0.95rem;
+}
+
+#global-back-container {
+  margin: 0;
+  padding: 0;
+  min-height: 0;
+}
+#global-back-container:empty {
+  display: none;
+}
+
+#screen-detail {
+  margin-top: 25px;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  padding: 0;
+  display: grid;
+  align-content: start;
+  gap: 0.75rem;
+}
+
+#screen-tags {
+  margin-top: 25px;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  padding: 0;
+  display: grid;
+  align-content: start;
+  gap: 0.75rem;
 }
 
 @media (max-width: 767px) {

@@ -26,24 +26,24 @@
   &__brand {
     display: flex;
     align-items: center;
-    gap: 0.8rem;
+    gap: 1rem;
   }
 
   &__logo {
-    width: 48px;
-    height: 48px;
+    width: 60px;
+    height: 60px;
     border-radius: var(--radius-md);
     border: 1px solid var(--line-color);
     background: var(--surface-soft);
     overflow: hidden;
-    flex: 0 0 48px;
+    flex: 0 0 60px;
     display: grid;
     place-items: center;
   }
 
   &__title {
     font-size: clamp(1.2rem, 1.5vw, 1.45rem);
-    font-weight: 700;
+    font-weight: 800;
   }
 
   &__actions {
@@ -90,6 +90,38 @@
   &__header {
     margin-bottom: 0.95rem;
   }
+}
+
+#global-back-container {
+  margin: 0;
+  padding: 0;
+  min-height: 0;
+
+  &:empty {
+    display: none;
+  }
+}
+
+#screen-detail {
+  margin-top: 25px;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  padding: 0;
+  display: grid;
+  align-content: start;
+  gap: 0.75rem;
+}
+
+#screen-tags {
+  margin-top: 25px;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  padding: 0;
+  display: grid;
+  align-content: start;
+  gap: 0.75rem;
 }
 
 @include m.tablet {

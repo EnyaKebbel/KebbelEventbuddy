@@ -1,38 +1,38 @@
 [
   {
     "id": "p1",
-    "name": "Max Mustermann",
-    "email": "max.mustermann@example.com",
-    "avatarUrl": "images/avatars/max.png"
+    "name": "Daniel Meier",
+    "email": "daniel.meier89@gmail.com",
+    "avatarUrl": "images/avatars/p1.png"
   },
   {
     "id": "p2",
-    "name": "Lea Beispiel",
-    "email": "lea.beispiel@example.com",
-    "avatarUrl": "images/avatars/lea.png"
+    "name": "Sabrina Keller",
+    "email": "sabrina.keller@outlook.com",
+    "avatarUrl": "images/avatars/p2.png"
   },
   {
     "id": "p3",
-    "name": "Sven Demo",
-    "email": "sven.demo@example.com",
-    "avatarUrl": "images/avatars/sven.png"
+    "name": "Lukas Baumgartner",
+    "email": "lukas.baumgartner@mail.ch",
+    "avatarUrl": "images/avatars/p3.png"
   },
   {
     "id": "p4",
-    "name": "Anna Schneider",
-    "email": "anna.schneider@example.com",
-    "avatarUrl": "images/avatars/anna.png"
+    "name": "Miriam Huber",
+    "email": "miriam.huber92@gmail.com",
+    "avatarUrl": "images/avatars/p4.png"
   },
   {
     "id": "p5",
-    "name": "Tobias Weber",
-    "email": "tobias.weber@example.com",
-    "avatarUrl": "images/avatars/tobias.png"
+    "name": "Jonas Frei",
+    "email": "jonas.frei@bluewin.ch",
+    "avatarUrl": "images/avatars/p5.png"
   },
   {
     "id": "p6",
-    "name": "Julia Hoffmann",
-    "email": "julia.hoffmann@example.com",
-    "avatarUrl": "images/avatars/julia.png"
+    "name": "Nadine Schmid",
+    "email": "nadine.schmid@icloud.com",
+    "avatarUrl": "images/avatars/p6.png"
   }
 ]

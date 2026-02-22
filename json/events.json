@@ -1,32 +1,52 @@
 [
   {
     "id": "e1",
-    "title": "Vereinsabend März",
-    "dateTime": "2026-03-14T19:30:00",
-    "location": "Vereinshaus",
-    "description": "Monatliches Treffen des Vereins mit Planung der kommenden Aktivitäten.",
+    "title": "Hochzeit",
+    "dateTime": "2026-03-14T15:00:00",
+    "location": "Lodge-Garten (Terrasse)",
+    "description": "Hochzeitsfeier mit Apéro im Garten, anschliessendem Dinner im Saal und Tanz bis Mitternacht. Aufbau ab 12:00 Uhr.",
     "status": "geplant",
-    "tagIds": ["t2"],
+    "tagIds": ["t1", "t2", "t5"],
     "participantIds": ["p1", "p2", "p4"]
   },
   {
     "id": "e2",
-    "title": "Workshop Fotografie",
-    "dateTime": "2026-04-05T10:00:00",
-    "location": "Studio Nord",
-    "description": "Praxisworkshop zur Einführung in kreative Fotografie-Techniken.",
+    "title": "Astronomie-Kurs",
+    "dateTime": "2026-04-05T20:30:00",
+    "location": "Panorama-Deck (Aussenbereich)",
+    "description": "Sternenabend mit kurzer Einführung, Teleskop-Stationen und heissen Getränken. Bei Schlechtwetter im Lounge-Bereich mit Vortrag.",
     "status": "geplant",
-    "tagIds": ["t1", "t3"],
+    "tagIds": ["t1", "t2", "t4", "t6"],
     "participantIds": ["p2", "p3", "p6", "p8"]
   },
   {
     "id": "e3",
-    "title": "Sommerfest Organisation",
-    "dateTime": "2026-05-20T18:00:00",
-    "location": "Gemeindezentrum",
-    "description": "Planungstreffen für das diesjährige Sommerfest.",
-    "status": "abgeschlossen",
-    "tagIds": ["t2"],
+    "title": "Live-Musik",
+    "dateTime": "2026-05-20T19:00:00",
+    "location": "Lodge-Bar (Innenbereich)",
+    "description": "Akustik-Set (2x 45 Min.) in der Bar. Reservierungen empfohlen, kleine Snackkarte & Signature Drinks.",
+    "status": "geplant",
+    "tagIds": ["t1", "t3", "t7"],
+    "participantIds": ["p1", "p5", "p7"]
+  },
+  {
+    "id": "e4",
+    "title": "Garten-Brunch",
+    "dateTime": "2026-06-07T10:30:00",
+    "location": "Garten & Wintergarten",
+    "description": "Sonntagsbrunch mit regionalem Buffet, Eierstation, Prosecco-Option und Familienbereich. Zwei Slots: 10:30 und 12:30 Uhr.",
+    "status": "geplant",
+    "tagIds": ["t1", "t4"],
+    "participantIds": ["p1", "p5", "p7"]
+  },
+  {
+    "id": "e5",
+    "title": "Wein-Abend",
+    "dateTime": "2026-06-19T18:30:00",
+    "location": "Weinkeller / Degustationsraum",
+    "description": "Degustationsabend mit 5 Weinen und abgestimmtem 3-Gang-Menü. Kurze Einführung durch Sommelier, Plätze limitiert.",
+    "status": "geplant",
+    "tagIds": ["t1", "t5", "t6"],
     "participantIds": ["p1", "p5", "p7"]
   }
 ]

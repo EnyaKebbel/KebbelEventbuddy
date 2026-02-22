@@ -51,14 +51,25 @@ class EventDetail extends HTMLElement {
         // Tags anzeigen
         const tagsHtml = (e.tagIds ?? [])
             .map(id => model.getTagById(id)?.name ?? id)
-            .map(name => `<li>${name}</li>`)
+            .map(name => `<li>${this.#escape(name)}</li>`)
             .join("");
 
         // Teilnehmer anzeigen
         const participantsHtml = (e.participantIds ?? [])
             .map(id => model.getParticipantById(id))
             .filter(p => p)
-            .map(p => `<li>${p.name} (${p.email})</li>`)
+            .map((p) => {
+                const avatar = this.#avatarPath(p.avatarUrl);
+                return `
+                  <li class="participants__item">
+                    <img class="participants__avatar" src="${avatar}" alt="${this.#escape(p.name)}" loading="lazy">
+                    <div class="participants__info">
+                      <span class="participants__name">${this.#escape(p.name)}</span>
+                      <span class="participants__email">${this.#escape(p.email)}</span>
+                    </div>
+                  </li>
+                `;
+            })
             .join("");
 
         this.shadowRoot.innerHTML = `
@@ -79,10 +90,10 @@ class EventDetail extends HTMLElement {
           </div>
 
           <div class="event-card__content">
-            <h3 class="event-card__title">${e.title}</h3>
-            <p class="event-card__meta">${date} · ${time} · ${e.location}</p>
-            <p class="event-card__meta">Status: ${e.status}</p>
-            <p>${e.description ?? ""}</p>
+            <h3 class="event-card__title">${this.#escape(e.title)}</h3>
+            <p class="event-card__meta">${date} · ${time} · ${this.#escape(e.location)}</p>
+            <p class="event-card__meta">Status: ${this.#escape(e.status)}</p>
+            <p>${this.#escape(e.description ?? "")}</p>
 
             <ul class="event-card__tags">
               ${tagsHtml}
@@ -93,7 +104,7 @@ class EventDetail extends HTMLElement {
         <section class="participants">
           <h3>Teilnehmer</h3>
           <ul class="participants__list">
-            ${participantsHtml}
+             ${participantsHtml || `<li class="participants__empty">Keine Teilnehmer zugeordnet.</li>`}
           </ul>
         </section>
       </section>
@@ -121,6 +132,21 @@ class EventDetail extends HTMLElement {
             );
         });
     }
-}
 
+    #avatarPath(avatarUrl) {
+        const raw = String(avatarUrl ?? "").trim();
+        if (!raw) return "Images/Event.png";
+        const file = raw.split("/").pop();
+        return file ? `Images/${file}` : "Images/Event.png";
+    }
+
+    #escape(str) {
+        return String(str ?? "")
+            .replaceAll("&", "&amp;")
+            .replaceAll("<", "&lt;")
+            .replaceAll(">", "&gt;")
+            .replaceAll('"', "&quot;")
+            .replaceAll("'", "&#039;");
+    }
+}
 customElements.define("event-detail", EventDetail);

@@ -1,14 +1,23 @@
 [
-  {
-    "id": "t1",
-    "name": "Workshop"
+  { "id": "t1",
+    "name": "Gäste"
   },
-  {
-    "id": "t2",
-    "name": "Verein"
+  { "id": "t2",
+    "name": "Personal"
   },
-  {
-    "id": "t3",
-    "name": "Konzert"
+  { "id": "t3",
+    "name": "Kultur"
+  },
+  { "id": "t4",
+    "name": "Outdoor"
+  },
+  { "id": "t5",
+    "name": "Luxus"
+  },
+  { "id": "t6",
+    "name": "Wissen"
+  },
+  { "id": "t7",
+    "name": "Unterhaltung"
   }
 ]
