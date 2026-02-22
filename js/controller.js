@@ -88,13 +88,19 @@ class Controller {
         });
 
         // FILTER
-        const filterView = document.querySelector("#filter-view");
+        //Listener hört dokumentweit auf filters-changed
+        document.addEventListener("filters-changed", (e) => {
+            if (!e.detail) return;
+            model.setFilters(e.detail);
+        });
 
-        if (filterView) {
-            filterView.addEventListener("filters-changed", (e) => {
-                model.setFilters(e.detail);
-            });
-        }
+        // ZURÜCK BUTTON
+        const backBtn = document.querySelector("#btn-back-global");
+
+        backBtn.addEventListener("click", () => {
+            model.clearSelection();
+            model.setView("list");
+        });
     }
 }
 export const controller = new Controller();

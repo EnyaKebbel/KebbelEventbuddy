@@ -28,6 +28,15 @@ export default class BaseComponent extends HTMLElement {
             // fallback
             if (screens.list) screens.list.style.display = "block";
         }
+
+        //Zurück Button Sichtbarkeit
+        const backContainer = document.querySelector("#global-back-container");
+
+        if (view === "list" || view === "form") {
+            if (backContainer) backContainer.style.display = "none";
+        } else {
+            if (backContainer) backContainer.style.display = "block";
+        }
     }
 }
 

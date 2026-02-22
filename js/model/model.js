@@ -177,6 +177,7 @@ class EventBuddyModel extends EventTarget {
         });
     }
 
+    //View-Panels setzen
     setView(view){
         // wenn gleich, nichts tun
         if (this.#currentView === view) return;

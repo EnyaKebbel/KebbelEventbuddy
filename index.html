@@ -44,6 +44,13 @@
         <!-- Main Content -->
         <main class="main" aria-label="Eventbereich">
 
+            <!-- ZURÜCK BUTTON -->
+            <div id="global-back-container" style="display:none; margin-bottom: 12px;">
+                <button id="btn-back-global" class="btn btn--ghost">
+                    ← Zurück
+                </button>
+            </div>
+
             <!-- SCREEN: LIST -->
             <section id="screen-list" class="panel panel--list">
                 <header class="panel__header">
@@ -64,9 +71,6 @@
 
             <!-- SCREEN: TAGS -->
             <section id="screen-tags" class="panel panel--list">
-                <header class="panel__header">
-                    <h2>Tags verwalten</h2>
-                </header>
                 <tag-manager></tag-manager>
             </section>
 

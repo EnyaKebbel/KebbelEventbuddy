@@ -4,6 +4,7 @@ class TagManager extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({ mode: "open" });
+        this.shadowRoot.addEventListener("click", (ev) => this.#onShadowClick(ev));
     }
 
     connectedCallback() {
@@ -15,10 +16,9 @@ class TagManager extends HTMLElement {
     render() {
         const tags = [...model.tags.values()];
 
-        const tagsHtml = tags
-            .map((t) => {
-                const used = model.isTagUsed ? model.isTagUsed(t.id) : false;
-                return `
+        const tagsHtml = tags.map((t) => {
+            const used = model.isTagUsed ? model.isTagUsed(t.id) : false;
+            return `
           <article class="event-card" data-tag-id="${t.id}">
             <div class="event-card__content">
               <p class="event-card__title">${this.#escape(t.name)}</p>
@@ -33,7 +33,7 @@ class TagManager extends HTMLElement {
             </div>
           </article>
         `;
-            })
+        })
             .join("");
 
         this.shadowRoot.innerHTML = `
@@ -69,7 +69,7 @@ class TagManager extends HTMLElement {
 
             this.dispatchEvent(
                 new CustomEvent("create-tag", {
-                    detail: { name: name.trim() },
+                    detail: {name: name.trim()},
                     bubbles: true,
                     composed: true,
                 })
@@ -77,44 +77,45 @@ class TagManager extends HTMLElement {
 
             input.value = "";
         });
+    }
 
-        // Tag löschen
-        this.shadowRoot.addEventListener("click", (ev) => {
-            const editBtn = ev.target.closest(".btn-edit");
-            if (editBtn) {
-                const card = editBtn.closest("[data-tag-id]");
-                const tagId = card?.dataset?.tagId;
-                if (!tagId) return;
-
-                const oldTag = model.getTagById(tagId);
-                const nextName = prompt("Neuer Tag-Name:", oldTag?.name ?? "");
-                if (nextName === null) return;
-
-                this.dispatchEvent(new CustomEvent("update-tag", {
-                    detail: { id: tagId, name: nextName.trim() },
-                    bubbles: true,
-                    composed: true,
-                }));
-                return;
-            }
-
-            const btn = ev.target.closest(".btn-delete");
-            if (!btn) return;
-
-            const card = btn.closest("[data-tag-id]");
+    #onShadowClick(ev) {
+        //Tag bearbeiten
+        const editBtn = ev.target.closest(".btn-edit");
+        if (editBtn) {
+            const card = editBtn.closest("[data-tag-id]");
             const tagId = card?.dataset?.tagId;
             if (!tagId) return;
 
-            const shouldDelete = confirm("Tag wirklich löschen?");
-            if (!shouldDelete) return;
+            const oldTag = model.getTagById(tagId);
+            const nextName = prompt("Neuer Tag-Name:", oldTag?.name ?? "");
+            if (nextName === null) return;
 
-            this.dispatchEvent(new CustomEvent("delete-tag", {
-                    detail: tagId,
-                    bubbles: true,
-                    composed: true,
-                })
-            );
-        });
+            this.dispatchEvent(new CustomEvent("update-tag", {
+                detail: { id: tagId, name: nextName.trim() },
+                bubbles: true,
+                composed: true,
+            }));
+            return;
+        }
+
+        //Tag löschen
+        const btn = ev.target.closest(".btn-delete");
+        if (!btn) return;
+
+        const card = btn.closest("[data-tag-id]");
+        const tagId = card?.dataset?.tagId;
+        if (!tagId) return;
+
+        const shouldDelete = confirm("Tag endgültig löschen?");
+        if (!shouldDelete) return;
+
+        this.dispatchEvent(
+            new CustomEvent("delete-tag", {
+            detail: tagId,
+            bubbles: true,
+            composed: true,
+        }));
     }
 
     #escape(str) {

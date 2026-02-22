@@ -72,11 +72,9 @@ class FilterView extends HTMLElement {
         if (statusEl) {
             statusEl.addEventListener("change", () => this.#emitFiltersChanged());
         }
-
         if (participantEl) {
             participantEl.addEventListener("change", () => this.#emitFiltersChanged());
         }
-
         if (tagEl) {
             tagEl.addEventListener("change", () => this.#emitFiltersChanged());
         }
@@ -107,5 +105,4 @@ class FilterView extends HTMLElement {
             .replaceAll("'", "&#039;");
     }
 }
-
 customElements.define("filter-view", FilterView);
