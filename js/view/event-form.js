@@ -185,7 +185,7 @@ class EventForm extends HTMLElement{
             ...form.querySelectorAll('input[name="participants"]:checked'),
         ].map((el) => el.value);
 
-        // 3) Extra Business Validierung (einfach & sinnvoll)
+        // 3) Extra Business Validierung
         if (title.length < 3) {
             alert("Titel muss mindestens 3 Zeichen lang sein.");
             return;
@@ -201,9 +201,6 @@ class EventForm extends HTMLElement{
             alert("Datum/Uhrzeit ist ungültig.");
             return;
         }
-
-        // Optional: Datum in Zukunft
-        if (dt.getTime() < Date.now()) { alert("Datum muss in der Zukunft liegen."); return; }
 
         if (location.length < 2) {
             alert("Ort muss mindestens 2 Zeichen lang sein.");

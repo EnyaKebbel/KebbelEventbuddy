@@ -156,10 +156,6 @@ class EventBuddyModel extends EventTarget {
         return this.#participants.get(participantId);
     }
 
-    assignParticipants(participant){
-
-    }
-
     //Filter
     setFilters(criteria){
         this.#filterCriteria = new FilterCriteria(criteria);
