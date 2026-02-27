@@ -212,6 +212,7 @@
 }
 
 @include m.mobile {
+  //generelle Komponenten
   .form-grid {
     grid-template-columns: 1fr;
   }
@@ -257,6 +258,7 @@
 }
 
 @include m.mobile {
+  //speziale Varianten
   .panel__header--actions-right {
     flex-direction: column;
     align-items: flex-start;

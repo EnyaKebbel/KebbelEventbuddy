@@ -56,16 +56,4 @@ export default class Event{
     get participantIds() {
         return this.#participantIds;
     }
-
-    addParticipant(participant) {
-        if (!this.#participantIds.includes(participant.id)) {
-            this.#participantIds.push(participant.id);
-        }
-    }
-
-    addTag(tag) {
-        if (!this.#tagIds.includes(tag.id)) {
-            this.#tagIds.push(tag.id);
-        }
-    }
 }

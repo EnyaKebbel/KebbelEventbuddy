@@ -1,10 +1,11 @@
+//Viewport Größen (scss)
 $desktop: 768px;
 $tablet: 767px;
 $mobile: 576px;
 
 @mixin tablet {
   @media (max-width: $tablet) {
-    @content;
+    @content; //Platzhalter für code beim Include
   }
 }
 

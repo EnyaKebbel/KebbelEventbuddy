@@ -51,7 +51,7 @@ class EventBuddyModel extends EventTarget {
         return this.#currentView;
     }
 
-    //Business Regeln (Methoden)
+    //--Business Regeln (Methoden)--//
     //Events
     getEventById(eventId){
         return this.#events.get(String(eventId));
@@ -169,7 +169,7 @@ class EventBuddyModel extends EventTarget {
             const statusOk = status === "alle" || ev.status === status;
             const tagOk = tagId === "alle" || (ev.tagIds ?? []).includes(tagId);
             const participantOk = participantId === "alle" || (ev.participantIds ?? []).includes(participantId);
-            return statusOk && tagOk && participantOk;
+            return statusOk && tagOk && participantOk; //zusammenfügen in eine Criteria
         });
     }
 

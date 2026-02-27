@@ -180,7 +180,7 @@ class EventForm extends HTMLElement{
         const tagSelect = form.querySelector("#event-tags");
         const tagIds = tagSelect ? [...tagSelect.selectedOptions].map((o) => o.value) : [];
 
-        // participantIds (checkboxes)
+        // participantIds (checkboxes) - Events zuordnen
         const participantIds = [
             ...form.querySelectorAll('input[name="participants"]:checked'),
         ].map((el) => el.value);
@@ -226,19 +226,16 @@ class EventForm extends HTMLElement{
 
         // 5) Dispatch an Controller (Model wird NICHT direkt von der View verändert)
         this.dispatchEvent(
-            new CustomEvent(this.#mode === "edit" ? "update-event" : "create-event", {
+            new CustomEvent(this.#mode === "edit" ? "update-event" : "create-event", { //EventName dynamisch gewählt
                 detail: payload,
                 bubbles: true,
                 composed: true,
             })
         );
-
-        // Optional: Formular resetten (Controller wechselt sowieso den View)
-        // form.reset();
     }
 
     #escape(str) {
-        // Mini-Escaper, damit du nicht aus Versehen HTML kaputt machst
+        // Mini-Escaper, damit nicht aus Versehen HTML kaputt geht
         return String(str ?? "")
             .replaceAll("&", "&amp;")
             .replaceAll("<", "&lt;")
