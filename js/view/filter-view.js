@@ -33,7 +33,7 @@ class FilterView extends HTMLElement {
             .join("");
 
         this.shadowRoot.innerHTML = `
-      <link rel="stylesheet" href="./styles/main.css">
+      <link rel="stylesheet" href="/styles/main.css">
 
       <section class="sidebar__section">
         <h2 class="sidebar__heading">Filter</h2>

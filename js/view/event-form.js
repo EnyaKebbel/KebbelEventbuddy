@@ -71,7 +71,7 @@ class EventForm extends HTMLElement{
             .join("");
 
         this.shadowRoot.innerHTML = `
-      <link rel="stylesheet" href="./styles/main.css">
+      <link rel="stylesheet" href="/styles/main.css">
 
       <section class="panel panel--detail">
         <header class="panel__header">
