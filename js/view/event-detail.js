@@ -27,7 +27,7 @@ class EventDetail extends HTMLElement {
     render() {
         if (!this.#event) {
             this.shadowRoot.innerHTML = `
-        <link rel="stylesheet" href="/styles/main.css">
+        <link rel="stylesheet" href="./styles/main.css">
          <section class="panel panel--detail">
         <header class="panel__header">
           <h2>Event-Details</h2>
