@@ -31,7 +31,7 @@ class EventItem extends HTMLElement {
             .map(name => `<li>${name}</li>`).join("");
 
         this.shadowRoot.innerHTML = `
-        <link rel="stylesheet" href="/styles/main.css">
+        <link rel="stylesheet" href="./styles/main.css">
       <article class="event-card" data-event-id="${e.id}">
         <div class="event-card__media" aria-hidden="true">
           <img src="Images/Event.png" alt="Event Icon">
